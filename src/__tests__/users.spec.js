@@ -9,7 +9,7 @@ describe('Users', () => {
       .post('/users')
       .send({
         name: 'John Doe',
-        username: 'johndoe'
+        username: 'john'
       })
     expect(201);
 
@@ -17,7 +17,7 @@ describe('Users', () => {
 
     expect(response.body).toMatchObject({
       name: 'John Doe',
-      username: 'johndoe',
+      username: 'john',
       todos: []
     });
   });
@@ -27,14 +27,14 @@ describe('Users', () => {
       .post('/users')
       .send({
         name: 'John Doe',
-        username: 'johndoe'
+        username: 'john'
       });
 
     const response = await request(app)
       .post('/users')
       .send({
         name: 'John Doe',
-        username: 'johndoe'
+        username: 'john'
       })
       .expect(400);
 
